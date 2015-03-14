@@ -1,3 +1,8 @@
+
+#need this library for working our hours from time stamps
+library("chron")
+
+
 #clear existing elemts - comment this out if needed
 rm(list = ls())
 
@@ -32,3 +37,13 @@ d_sample_file="/home/pawel/kaggle/datasets/kaggle-cyclists/sampleSubmission.csv"
 #load sample file
  f_sample=load_testing_file( P_file_name = d_sample_file, P_test = f_sa )
 
+
+#add day column
+ f_train=add_column_into_frame( P_data_frame = f_train
+                              , P_column_vector = weekdays(as.Date(f_train$datetime))
+                              , P_column_name = "day")
+
+#add hour column
+f_train=add_column_into_frame( P_data_frame = f_train
+                               , P_column_vector = f_train[ ,c("datetime")]
+                               , P_column_name = "hour")
