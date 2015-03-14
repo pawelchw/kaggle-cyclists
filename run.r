@@ -1,4 +1,5 @@
-setwd("/home/pawel/kaggle/cyclist/")
+setwd("/home/pawel/kaggle/kaggle-cyclists/")
 source("code/funcs.r")
 
-t=load_testing_file("aaaa")
+#cannot upload dataset into repository due to license limitation
+t=load_testing_file("/home/pawel/kaggle/datasets/kaggle-cyclists/")
