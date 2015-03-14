@@ -2,16 +2,15 @@
    load_testing_file <- function( P_file_name  # file name to search for in the working directory
                                  )
    {
-  
    #find out if file exists
-      if (file.exists( P_file_name ))
+      if ( file.exists( P_file_name ) )
       {
-         csv.test <- read.csv("../test.csv")
-         return (1)
+         csv.test <- read.csv( P_file_name )
+         return (  list(1, csv.test)  )
       }
       else
       {
         print("file"+P_file_name+"doesn-t exist")
-        return (-1)
+        return ( list (-1, NULL) )
       }
-}
+   }
